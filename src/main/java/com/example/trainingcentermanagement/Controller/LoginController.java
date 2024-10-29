@@ -68,12 +68,6 @@ public class LoginController implements Initializable {
         if (accountService.checkLoginSuccess(currentAccount)) {
             System.out.println("Authentication successful with User: " +
                                 UserContext.getInstance().toString());
-
-            try {
-                App.setScene("WelcomeStudent");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         } else{
             Alert.showAlert(javafx.scene.control.Alert.AlertType.ERROR,
                     "Error",
