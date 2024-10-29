@@ -9,15 +9,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Instructor {
+public class Manager {
 
-    private int instructor_id;
+    private int manager_id;
     private int account_id;
     private String name;
-    private float level;
     private String email;
     private String phone;
 
-    //------------------------------------------------------------------
-
+    //-------------------------------------------------------------
 }

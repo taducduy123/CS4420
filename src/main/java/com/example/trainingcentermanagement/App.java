@@ -36,17 +36,42 @@ public class App extends Application {
 
     // When we want to change a screen to another screen
     public static void setRootAs(String fxmlPath) throws IOException {
-        Parent currentRoot = loadFXML(fxmlPath + ".fxml");
-        scene.setRoot(currentRoot);
+        Parent newRoot = loadFXML(fxmlPath + ".fxml");
+        scene.setRoot(newRoot);
 
         // Make stage fit new scene
-        stage.setWidth(currentRoot.prefWidth(-1));
-        stage.setHeight(currentRoot.prefHeight(-1));
+        stage.setWidth(newRoot.prefWidth(-1));
+        stage.setHeight(newRoot.prefHeight(-1));
 
     }
+
+    public static void popup(String fxmlPath, String title, double width, double height) throws IOException {
+        Stage popupStage = new Stage();
+        Scene popupScene = new Scene(loadFXML(fxmlPath));
+
+        popupStage.setScene(popupScene);
+        popupStage.setTitle(title);
+        popupStage.setWidth(width);
+        popupStage.setHeight(height);
+
+        popupStage.showAndWait();
+    }
+
 
     private static Parent loadFXML(String fxmlPath) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlPath + ".fxml"));
         return fxmlLoader.load();
+    }
+
+
+    public static void setScene(String fmxlPath) throws IOException {
+
+        Scene scene = new Scene(loadFXML(fmxlPath));
+        //stage.setScene(scene);
+
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

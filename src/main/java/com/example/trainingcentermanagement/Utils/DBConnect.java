@@ -118,7 +118,5 @@ public class DBConnect {
         DBConnect.instance = new DBConnect();
         instance.showDatabaseDetails();
         instance.closeConnection();
-
-
     }
 }
