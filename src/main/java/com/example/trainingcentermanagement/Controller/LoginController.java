@@ -28,6 +28,7 @@ public class LoginController implements Initializable {
     @FXML
     private Hyperlink hLink_forgotPassword;
 
+    private int i = 0;
 
     private final AccountService accountService;
 
@@ -38,6 +39,11 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { // = contructor for component
+
+
+        System.out.println("Initialize is called");
+
+
         cb_role.getItems().addAll("Student", "Instructor", "Manager");
         cb_role.setValue("Student");
     }
@@ -68,6 +74,12 @@ public class LoginController implements Initializable {
         if (accountService.checkLoginSuccess(currentAccount)) {
             System.out.println("Authentication successful with User: " +
                                 UserContext.getInstance().toString());
+
+            try {
+                App.setRootAs("WelcomeStudent");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         } else{
             Alert.showAlert(javafx.scene.control.Alert.AlertType.ERROR,
                     "Error",

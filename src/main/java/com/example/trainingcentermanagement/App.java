@@ -1,5 +1,6 @@
 package com.example.trainingcentermanagement;
 
+import com.example.trainingcentermanagement.Controller.DashboardController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class App extends Application {
 
@@ -21,7 +23,7 @@ public class App extends Application {
         stage = primaryStage;
 
         // Create Scene (or Root)
-        scene = new Scene(loadFXML("LoginView"));
+        scene = new Scene(loadFXML("DashboardView"));
 
         // Add the current scene to stage
         primaryStage.setScene(scene);
@@ -36,7 +38,7 @@ public class App extends Application {
 
     // When we want to change a screen to another screen
     public static void setRootAs(String fxmlPath) throws IOException {
-        Parent newRoot = loadFXML(fxmlPath + ".fxml");
+        Parent newRoot = loadFXML(fxmlPath);
         scene.setRoot(newRoot);
 
         // Make stage fit new scene
@@ -63,13 +65,6 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-
-    public static void setScene(String fmxlPath) throws IOException {
-
-        Scene scene = new Scene(loadFXML(fmxlPath));
-        //stage.setScene(scene);
-
-    }
 
     public static void main(String[] args) {
         launch(args);
