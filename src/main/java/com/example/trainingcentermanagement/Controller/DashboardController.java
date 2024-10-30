@@ -1,11 +1,15 @@
 package com.example.trainingcentermanagement.Controller;
 
+import com.example.trainingcentermanagement.App;
+import com.example.trainingcentermanagement.Utils.UserContext;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -58,4 +62,20 @@ public class DashboardController implements Initializable {
     }
 
 
+    public void OnClickLogOut(ActionEvent actionEvent) {
+        UserContext.getInstance().clearContext();
+        try {
+            App.setRootAs("LoginView");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void OnClickChangePassword(ActionEvent actionEvent) {
+        try {
+            App.popup("ChangePasswordView", "Change Password", 600, 465);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

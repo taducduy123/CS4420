@@ -76,7 +76,7 @@ public class LoginController implements Initializable {
                                 UserContext.getInstance().toString());
 
             try {
-                App.setRootAs("WelcomeStudent");
+                App.setRootAs("DashboardView");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -23,7 +23,7 @@ public class App extends Application {
         stage = primaryStage;
 
         // Create Scene (or Root)
-        scene = new Scene(loadFXML("DashboardView"));
+        scene = new Scene(loadFXML("LoginView"));
 
         // Add the current scene to stage
         primaryStage.setScene(scene);
