@@ -47,6 +47,7 @@ public class App extends Application {
 
     }
 
+    // Pop up new stage
     public static void popup(String fxmlPath, String title, double width, double height) throws IOException {
         Stage popupStage = new Stage();
         Scene popupScene = new Scene(loadFXML(fxmlPath));

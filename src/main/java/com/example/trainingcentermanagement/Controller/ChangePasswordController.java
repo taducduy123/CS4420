@@ -1,5 +1,6 @@
 package com.example.trainingcentermanagement.Controller;
 
+import com.example.trainingcentermanagement.App;
 import com.example.trainingcentermanagement.Services.ChangePasswordService;
 import com.example.trainingcentermanagement.Utils.Alert;
 import com.example.trainingcentermanagement.Utils.UserContext;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,7 +28,7 @@ public class ChangePasswordController implements Initializable {
     private ChangePasswordService changePasswordService;
     //---------------------------------------------------------------------
 
-    public void setChangePasswordService() {
+    public ChangePasswordController() {
         this.changePasswordService = new ChangePasswordService();
     }
 
@@ -64,6 +66,24 @@ public class ChangePasswordController implements Initializable {
                     null,
                     "Current password is wrong!");
             return;
+        }
+
+        // Update database
+        String currentRole = UserContext.getInstance().getRole();
+        String currentUsername = UserContext.getInstance().getUsername();
+        changePasswordService.updateUserPasswordByUsername(currentRole, currentUsername, newPW);
+
+        // Show confirmation message
+        Alert.showAlert(javafx.scene.control.Alert.AlertType.CONFIRMATION,
+                "",
+                null,
+                "Password changed successfully!");
+
+        // Back to Dashboard
+        try {
+            App.setRootAs("DashboardView");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

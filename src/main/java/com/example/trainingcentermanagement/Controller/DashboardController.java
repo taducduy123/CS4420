@@ -3,6 +3,7 @@ package com.example.trainingcentermanagement.Controller;
 import com.example.trainingcentermanagement.App;
 import com.example.trainingcentermanagement.Utils.UserContext;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -14,8 +15,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
-    public ListView<String> lstMenu;
-    public AnchorPane contentPane;
+
+    @FXML
+    private ListView<String> lstMenu;
+    @FXML
+    private AnchorPane contentPane;
 
 
     //----------------------------------------------------------------------------------
@@ -28,16 +32,37 @@ public class DashboardController implements Initializable {
         loadPane(lstMenu.getSelectionModel().getSelectedItem()); // loadPane("menu1")
     }
 
+
+    private void initializeDashboardByRole(String role) {
+        String tempRole = role.toLowerCase();
+
+        switch (tempRole) {
+            case "student":
+                lstMenu.getItems().addAll("Profile", "Register", "Course", "Transaction");
+                lstMenu.getSelectionModel().selectFirst();
+                break;
+
+            case "instructor":
+                lstMenu.getItems().addAll("Profile", "Course", "Transaction");
+                lstMenu.getSelectionModel().selectFirst();
+                break;
+
+            case "manager":
+                lstMenu.getItems().addAll("Profile", "Instructor", "Student", "Course", "Payroll", "Statistical");
+                lstMenu.getSelectionModel().selectFirst();
+                break;
+        }
+    }
+
+
     private void loadPane(String selectedItem) {
         String frm = "";
 
         switch (selectedItem) {
-            case "Menu 1":
-                frm = "/com/example/trainingcentermanagement/Menu1View.fxml";
+            case "Profile":
+                frm = "/com/example/trainingcentermanagement/ProfileView.fxml";
                 break;
 
-            case "Menu 2":
-                frm = "/com/example/trainingcentermanagement/Menu2View.fxml";
         }
 
         try {

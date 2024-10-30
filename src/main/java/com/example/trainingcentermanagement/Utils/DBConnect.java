@@ -3,6 +3,8 @@ package com.example.trainingcentermanagement.Utils;
 import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -85,7 +87,7 @@ public class DBConnect {
     }
 
 
-    // Execute SQLs WITH having return values
+    // Execute SQLs WITH having return values (return Model data type only)
     public <T> List<T> executeReturnQuery(String sql, Class<T> type, Object... parameters){
 
         BasicRowProcessor rowProcess = new BasicRowProcessor();
@@ -96,6 +98,17 @@ public class DBConnect {
             throw new RuntimeException(e);
         }
 
+    }
+
+
+    // Execute SQLs WITH having return values (return primitive data type only)
+    public <T> List<T> executeReturnPrimitiveTypeQuery(String sql, Class<T> type, Object... parameters) {
+        ColumnListHandler<T> handler = new ColumnListHandler<>();
+        try {
+            return queryRunner.query(connection, sql, handler, parameters);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

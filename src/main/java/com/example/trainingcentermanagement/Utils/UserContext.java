@@ -8,7 +8,7 @@ public class UserContext {
     private String username;
     private String password;
     private int user_id;
-    private String user_name;
+    private String name;
     private String email;
     private String phone;
 
@@ -69,12 +69,12 @@ public class UserContext {
         this.user_id = user_id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getName() {
+        return name;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

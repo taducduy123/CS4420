@@ -4,7 +4,7 @@ import com.example.trainingcentermanagement.Repository.ForgotPasswordRepo;
 
 public class ForgotPasswordService {
 
-    private ForgotPasswordRepo forgotPasswordRepo;
+    private final ForgotPasswordRepo forgotPasswordRepo;
     //--------------------------------------------------------
 
     public ForgotPasswordService() {

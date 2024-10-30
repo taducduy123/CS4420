@@ -9,7 +9,7 @@ import com.example.trainingcentermanagement.Utils.UserContext;
 
 public class AccountService {
 
-    private AccountRepo accountRepo;
+    private final AccountRepo accountRepo;
 
     //---------------------------------------
 
@@ -32,7 +32,7 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(student.getStudent_id());
-                    UserContext.getInstance().setUser_name(student.getName());
+                    UserContext.getInstance().setName(student.getName());
                     UserContext.getInstance().setEmail(student.getEmail());
                     UserContext.getInstance().setPhone(student.getPhone());
                 }
@@ -48,7 +48,7 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(instructor.getInstructor_id());
-                    UserContext.getInstance().setUser_name(instructor.getName());
+                    UserContext.getInstance().setName(instructor.getName());
                     UserContext.getInstance().setEmail(instructor.getEmail());
                     UserContext.getInstance().setPhone(instructor.getPhone());
                 }
@@ -64,7 +64,7 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(manager.getManager_id());
-                    UserContext.getInstance().setUser_name(manager.getName());
+                    UserContext.getInstance().setName(manager.getName());
                     UserContext.getInstance().setEmail(manager.getEmail());
                     UserContext.getInstance().setPhone(manager.getPhone());
                 }
