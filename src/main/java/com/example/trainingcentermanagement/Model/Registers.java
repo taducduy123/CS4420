@@ -15,9 +15,8 @@ import java.time.LocalDateTime;
 @ToString
 public class Registers {
 
-    private int course_id;
+    private String course_id;
     private int student_id;
-    private LocalDateTime register_day;
 
     //-------------------------------------------------------------
 }

@@ -1,6 +1,5 @@
 package com.example.trainingcentermanagement.Model;
 
-
 import lombok.*;
 
 @Setter
@@ -9,17 +8,17 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Instructor {
-
+public class Payroll {
     private int instructor_id;
-    private int account_id;
     private String first_name;
     private String middle_name;
     private String last_name;
     private int level;
-    private String email;
-    private String phone;
+    private String course_id;
+    private String course_name;
+    private double course_rate;
+    private int  numAttend;
+    private double total;
 
-    //------------------------------------------------------------------
-
+    //---------------------------------
 }

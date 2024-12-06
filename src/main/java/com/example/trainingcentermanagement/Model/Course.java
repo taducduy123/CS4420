@@ -11,10 +11,11 @@ import lombok.*;
 @ToString
 public class Course {
 
-    private int course_id;
+    private String course_id;
     private String name;
     private String description;
-    private float rate;
+    private double rate;
+    private int capacity;
 
     //---------------------------------------------------------
 

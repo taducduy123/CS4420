@@ -2,8 +2,6 @@ package com.example.trainingcentermanagement.Model;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 
 @Setter
 @Getter
@@ -11,12 +9,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Instructor_attendance {
+public class Ins_Attend {
 
     private int session_id;
     private int instructor_id;
-    private boolean status;
-    private LocalDateTime attendance_time;
+    private boolean check_attend;
 
     //--------------------------------------------------------------------------------
 }

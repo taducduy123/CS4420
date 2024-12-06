@@ -24,6 +24,7 @@ public class AccountService {
         switch (account.getRole()) {
             case "student":
                 Student student = accountRepo.getStudentBy_UsernameAndPassword(account.getUsername(), account.getPassword());
+                System.out.println(student);
                 if (student != null) {
                     isSuccess = true;
 
@@ -32,7 +33,9 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(student.getStudent_id());
-                    UserContext.getInstance().setName(student.getName());
+                    UserContext.getInstance().setFirst_name(student.getFirst_name());
+                    UserContext.getInstance().setMiddle_name(student.getMiddle_name());
+                    UserContext.getInstance().setLast_name(student.getLast_name());
                     UserContext.getInstance().setEmail(student.getEmail());
                     UserContext.getInstance().setPhone(student.getPhone());
                 }
@@ -40,6 +43,7 @@ public class AccountService {
 
             case "instructor":
                 Instructor instructor = accountRepo.getInstructorBy_UsernameAndPassword(account.getUsername(), account.getPassword());
+                System.out.println(instructor);
                 if (instructor != null) {
                     isSuccess = true;
 
@@ -48,7 +52,9 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(instructor.getInstructor_id());
-                    UserContext.getInstance().setName(instructor.getName());
+                    UserContext.getInstance().setFirst_name(instructor.getFirst_name());
+                    UserContext.getInstance().setMiddle_name(instructor.getMiddle_name());
+                    UserContext.getInstance().setLast_name(instructor.getLast_name());
                     UserContext.getInstance().setEmail(instructor.getEmail());
                     UserContext.getInstance().setPhone(instructor.getPhone());
                 }
@@ -56,6 +62,7 @@ public class AccountService {
 
             case "manager":
                 Manager manager = accountRepo.getManagerBy_UsernameAndPassword(account.getUsername(), account.getPassword());
+                System.out.println(manager);
                 if (manager != null) {
                     isSuccess = true;
 
@@ -64,7 +71,9 @@ public class AccountService {
                     UserContext.getInstance().setUsername(account.getUsername());
                     UserContext.getInstance().setPassword(account.getPassword());
                     UserContext.getInstance().setUser_id(manager.getManager_id());
-                    UserContext.getInstance().setName(manager.getName());
+                    UserContext.getInstance().setFirst_name(manager.getFirst_name());
+                    UserContext.getInstance().setMiddle_name(manager.getMiddle_name());
+                    UserContext.getInstance().setLast_name(manager.getLast_name());
                     UserContext.getInstance().setEmail(manager.getEmail());
                     UserContext.getInstance().setPhone(manager.getPhone());
                 }

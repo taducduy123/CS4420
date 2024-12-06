@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="751.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainingcentermanagement.Controller.BillingController">
+   <children>
+      <Label layoutX="387.0" layoutY="14.0" text="Billing">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="15.0" layoutY="86.0" prefHeight="394.0" prefWidth="843.0">
+        <columns>
+          <TableColumn fx:id="studentID" prefWidth="43.0" text=" ID" />
+          <TableColumn fx:id="fname" prefWidth="78.0" text="First Name" />
+            <TableColumn fx:id="mname" prefWidth="93.0" text="Middle Name" />
+            <TableColumn fx:id="lname" text="Last Name" />
+            <TableColumn fx:id="courseID" prefWidth="85.0" text="Course ID" />
+            <TableColumn fx:id="courseName" prefWidth="185.0" text="Course Name" />
+            <TableColumn fx:id="rate" prefWidth="101.0" text="Rate ($/session)" />
+            <TableColumn fx:id="numAttend" prefWidth="96.0" text="# Attendances" />
+            <TableColumn fx:id="total" prefWidth="102.0" text="Total" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtStudentID" layoutX="193.0" layoutY="560.0" prefHeight="30.0" prefWidth="165.0" promptText="Enter student ID" />
+      <Label layoutX="15.0" layoutY="560.0" text="Enter Student ID:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="560.0" text="Total Amount:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTotalAmount" layoutX="612.0" layoutY="560.0" prefHeight="30.0" prefWidth="226.0" />
+      <Button fx:id="btnBill" layoutX="371.0" layoutY="663.0" mnemonicParsing="false" onAction="#onClickGenerateBill" text="Calculate Total">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

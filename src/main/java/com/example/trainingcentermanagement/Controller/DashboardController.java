@@ -25,9 +25,8 @@ public class DashboardController implements Initializable {
     //----------------------------------------------------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lstMenu.getItems().addAll("Profile", "Instructor", "Student", "Course"); // them menu
 
-        lstMenu.getSelectionModel().selectFirst(); // chon menu dau tien => menu1 //
+        initializeDashboardByRole(UserContext.getInstance().getRole());
 
         loadPane(lstMenu.getSelectionModel().getSelectedItem()); // loadPane("menu1")
     }
@@ -48,7 +47,7 @@ public class DashboardController implements Initializable {
                 break;
 
             case "manager":
-                lstMenu.getItems().addAll("Profile", "Instructor", "Student", "Course", "Payroll", "Statistical");
+                lstMenu.getItems().addAll("Profile", "Instructor", "Student", "Course", "Billing", "Payroll", "Statistical");
                 lstMenu.getSelectionModel().selectFirst();
                 break;
         }
@@ -63,6 +62,13 @@ public class DashboardController implements Initializable {
                 frm = "/com/example/trainingcentermanagement/ProfileView.fxml";
                 break;
 
+            case  "Billing":
+                frm = "/com/example/trainingcentermanagement/BillingView.fxml";
+                break;
+
+            case  "Payroll":
+                frm = "/com/example/trainingcentermanagement/PayrollView.fxml";
+                break;
         }
 
         try {

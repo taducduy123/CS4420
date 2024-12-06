@@ -1,7 +1,6 @@
 package com.example.trainingcentermanagement.Model;
-
-
 import lombok.*;
+
 
 @Setter
 @Getter
@@ -9,12 +8,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Assignment {
+public class Stu_Attend {
 
-    private int assignment_id;
     private int session_id;
-    private String description;
+    private int student_id;
+    private boolean check_attend;
 
-    //-----------------------------------------------------
-
+    //--------------------------------------------------
 }

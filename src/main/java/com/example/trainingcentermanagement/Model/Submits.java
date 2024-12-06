@@ -10,11 +10,12 @@ import lombok.*;
 @Builder
 @ToString
 
-public class Grading {
+public class Submits {
 
     private int assignment_id;
     private int student_id;
-    private float score;
+    private String solution;
+    private double score;
     private String feedback;
 
     //------------------------------------------------------------------

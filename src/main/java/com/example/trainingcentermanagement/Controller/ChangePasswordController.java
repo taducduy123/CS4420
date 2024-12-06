@@ -73,6 +73,9 @@ public class ChangePasswordController implements Initializable {
         String currentUsername = UserContext.getInstance().getUsername();
         changePasswordService.updateUserPasswordByUsername(currentRole, currentUsername, newPW);
 
+        // Update User Context
+        UserContext.getInstance().setPassword(newPW);
+
         // Show confirmation message
         Alert.showAlert(javafx.scene.control.Alert.AlertType.CONFIRMATION,
                 "",

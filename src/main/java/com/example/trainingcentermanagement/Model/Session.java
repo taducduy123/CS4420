@@ -12,7 +12,7 @@ import lombok.*;
 public class Session {
 
     private int session_id;
-    private int course_id;
+    private String course_id;
     private String title;
     private String content;
 

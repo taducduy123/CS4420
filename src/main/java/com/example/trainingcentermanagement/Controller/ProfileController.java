@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 
 public class ProfileController implements Initializable {
 
+
     @FXML
     private TextField txtUserID;
     @FXML
@@ -22,7 +23,11 @@ public class ProfileController implements Initializable {
     @FXML
     private TextField txtUsername;
     @FXML
-    private TextField txtFullname;
+    private TextField txtFname;
+    @FXML
+    private TextField txtMname;
+    @FXML
+    private TextField txtLname;
     @FXML
     private TextField txtEmail;
     @FXML
@@ -55,13 +60,17 @@ public class ProfileController implements Initializable {
         txtUserID.setEditable(false);
         txtRole.setEditable(false);
         txtUsername.setEditable(false);
-        txtFullname.setEditable(false);
+        txtFname.setEditable(false);
+        txtMname.setEditable(false);
+        txtLname.setEditable(false);
         txtEmail.setEditable(false);
         txtPhone.setEditable(false);
     }
 
     private void setFieldsEditable() {
-        txtFullname.setEditable(true);
+        txtFname.setEditable(true);
+        txtMname.setEditable(true);
+        txtLname.setEditable(true);
         txtEmail.setEditable(true);
         txtPhone.setEditable(true);
     }
@@ -70,7 +79,9 @@ public class ProfileController implements Initializable {
         txtUserID.setText(String.valueOf(UserContext.getInstance().getUser_id()));
         txtRole.setText(UserContext.getInstance().getRole());
         txtUsername.setText(UserContext.getInstance().getUsername());
-        txtFullname.setText(UserContext.getInstance().getName());
+        txtFname.setText(UserContext.getInstance().getFirst_name());
+        txtMname.setText(UserContext.getInstance().getMiddle_name());
+        txtLname.setText(UserContext.getInstance().getLast_name());
         txtEmail.setText(UserContext.getInstance().getEmail());
         txtPhone.setText(UserContext.getInstance().getPhone());
     }
@@ -86,12 +97,14 @@ public class ProfileController implements Initializable {
 
     public void OnClickSave(ActionEvent actionEvent) {
         // Get user input
-        String fullname = txtFullname.getText();
+        String fname = txtFname.getText();
+        String mname = txtMname.getText();
+        String lname = txtLname.getText();
         String email = txtEmail.getText();
         String phone = txtPhone.getText();
 
         // Validate user input
-        if(fullname.isEmpty() || email.isEmpty() || phone.isEmpty()) {
+        if(fname.isEmpty() || mname.isEmpty() || lname.isEmpty() || email.isEmpty() || phone.isEmpty()) {
             Alert.showAlert(javafx.scene.control.Alert.AlertType.ERROR,
                     "Error",
                     null,
@@ -114,12 +127,14 @@ public class ProfileController implements Initializable {
         }
 
         // Update User Context
-        UserContext.getInstance().setName(fullname);
+        UserContext.getInstance().setFirst_name(fname);
+        UserContext.getInstance().setMiddle_name(mname);
+        UserContext.getInstance().setLast_name(lname);
         UserContext.getInstance().setEmail(email);
         UserContext.getInstance().setPhone(phone);
 
         // Update database
-        profileService.updateNameByRole(UserContext.getInstance().getRole(), fullname);
+        profileService.updateNameByRole(UserContext.getInstance().getRole(), fname,mname,lname);
         profileService.updateEmailByRole(UserContext.getInstance().getRole(), email);
         profileService.updatePhoneByRole(UserContext.getInstance().getRole(), phone);
 

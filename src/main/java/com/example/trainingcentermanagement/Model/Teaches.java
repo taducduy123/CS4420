@@ -11,8 +11,8 @@ import lombok.*;
 @ToString
 public class Teaches {
 
-    private int course_id;
     private int instructor_id;
+    private String course_id;
 
     //-----------------------------------------------------------------
 }

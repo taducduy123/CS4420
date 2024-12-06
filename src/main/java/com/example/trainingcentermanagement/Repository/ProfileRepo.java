@@ -16,33 +16,39 @@ public class ProfileRepo {
 
 
 
-    public void updateStudentName(int user_id, String newName) {
+    public void updateStudentName(int user_id, String first_name, String middle_name, String last_name) {
         String sql = """
                         UPDATE student
-                        SET name = ?
+                        SET first_name = ?,
+                            middle_name = ?,
+                            last_name = ?
                         WHERE student_id = ?;
                      """;
-        dbConnect.executeVoidQuery(sql, newName, user_id);
+        dbConnect.executeVoidQuery(sql, first_name, middle_name, last_name, user_id);
     }
 
 
-    public void updateInstructorName(int user_id, String newName) {
+    public void updateInstructorName(int user_id, String first_name, String middle_name, String last_name) {
         String sql = """
                         UPDATE instructor
-                        SET name = ?
+                        SET first_name = ?,
+                            middle_name = ?,
+                            last_name = ?
                         WHERE instructor_id = ?;
                      """;
-        dbConnect.executeVoidQuery(sql, newName, user_id);
+        dbConnect.executeVoidQuery(sql, first_name, middle_name, last_name, user_id);
     }
 
 
-    public void updateManagerName(int user_id, String newName) {
+    public void updateManagerName(int user_id, String first_name, String middle_name, String last_name) {
         String sql = """
                         UPDATE manager
-                        SET name = ?
+                        SET first_name = ?,
+                            middle_name = ?,
+                            last_name = ?
                         WHERE manager_id = ?;
                      """;
-        dbConnect.executeVoidQuery(sql, newName, user_id);
+        dbConnect.executeVoidQuery(sql, first_name, middle_name, last_name, user_id);
     }
 
 

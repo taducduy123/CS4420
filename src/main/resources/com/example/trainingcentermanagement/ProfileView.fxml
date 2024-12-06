@@ -37,6 +37,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="User ID:">
@@ -54,27 +56,39 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label text="Full Name:" GridPane.rowIndex="3">
+            <Label text="First Name:" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label text="Email:" GridPane.rowIndex="4">
+            <Label text="Email:" GridPane.rowIndex="6">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label text="Phone Number:" GridPane.rowIndex="5">
+            <Label text="Phone Number:" GridPane.rowIndex="7">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="txtUserID" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: gray; -fx-background-color: gray; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" />
-            <TextField fx:id="txtRole" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtUsername" layoutX="239.0" layoutY="83.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtFullname" layoutX="239.0" layoutY="146.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtEmail" layoutX="239.0" layoutY="209.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtPhone" layoutX="239.0" layoutY="272.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtRole" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: gray; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtUsername" layoutX="239.0" layoutY="83.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: gray; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtFname" layoutX="239.0" layoutY="146.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtEmail" layoutX="239.0" layoutY="209.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="txtPhone" layoutX="239.0" layoutY="272.0" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label prefHeight="35.0" prefWidth="177.0" text="Middle Name:" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Last Name:" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtMname" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtLname" prefHeight="45.0" prefWidth="392.0" style="-fx-border-color: GRAY; -fx-background-color: white; -fx-border-width: 1px 1px 1px 1px;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Button fx:id="btnUploadImg" layoutX="47.0" layoutY="286.0" mnemonicParsing="false" text="Upload Image">

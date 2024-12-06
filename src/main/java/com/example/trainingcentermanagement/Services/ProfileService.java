@@ -13,15 +13,15 @@ public class ProfileService {
         this.profileRepo = new ProfileRepo();
     }
 
-    public void updateNameByRole(String role, String newName) {
+    public void updateNameByRole(String role, String first_name, String middle_name, String last_name) {
         if(role.compareToIgnoreCase("student") == 0){
-            profileRepo.updateStudentName(UserContext.getInstance().getUser_id(), newName);
+            profileRepo.updateStudentName(UserContext.getInstance().getUser_id(), first_name, middle_name, last_name);
         }
         else if(role.compareToIgnoreCase("instructor") == 0){
-            profileRepo.updateInstructorName(UserContext.getInstance().getUser_id(), newName);
+            profileRepo.updateInstructorName(UserContext.getInstance().getUser_id(), first_name, middle_name, last_name);
         }
         else if(role.compareToIgnoreCase("manager") == 0){
-            profileRepo.updateManagerName(UserContext.getInstance().getUser_id(), newName);
+            profileRepo.updateManagerName(UserContext.getInstance().getUser_id(), first_name, middle_name, last_name);
         }
     }
 
