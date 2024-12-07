@@ -41,8 +41,8 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) { // = contructor for component
 
 
-        System.out.println("Initialize is called");
-
+        //System.out.println("Initialize is called");
+        cb_role.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 18;");
 
         cb_role.getItems().addAll("Student", "Instructor", "Manager");
         cb_role.setValue("Student");

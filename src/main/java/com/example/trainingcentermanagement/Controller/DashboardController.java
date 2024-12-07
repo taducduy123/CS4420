@@ -29,6 +29,7 @@ public class DashboardController implements Initializable {
         initializeDashboardByRole(UserContext.getInstance().getRole());
 
         loadPane(lstMenu.getSelectionModel().getSelectedItem()); // loadPane("menu1")
+        lstMenu.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20;");
     }
 
 

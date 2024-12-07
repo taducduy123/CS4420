@@ -102,7 +102,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.trainingcentermanagement.FakeMain
+                                com.example.trainingcentermanagement.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
@@ -132,7 +132,7 @@
                             <transformers>
                                 <transformer implementation=
                                                      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.example.trainingcentermanagement.FakeMain</mainClass>
+                                    <mainClass>com.example.trainingcentermanagement.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

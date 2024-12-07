@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="751.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trainingcentermanagement.Controller.PayrollController">
    <children>
       <Label layoutX="377.0" layoutY="21.0" text="Payroll">
@@ -35,13 +34,19 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtInstructorID" layoutX="223.0" layoutY="530.0" prefHeight="36.0" prefWidth="159.0" promptText="Enter Instructor ID" />
-      <Label layoutX="508.0" layoutY="533.0" text="Total Salary:">
+      <TextField fx:id="txtInstructorID" layoutX="223.0" layoutY="530.0" prefHeight="36.0" prefWidth="159.0" promptText="Enter Instructor ID">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Label layoutX="481.0" layoutY="533.0" text="Total Salary ($):">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTotalSalary" layoutX="643.0" layoutY="530.0" prefHeight="36.0" prefWidth="198.0" />
+      <TextField fx:id="txtTotalSalary" layoutX="641.0" layoutY="530.0" prefHeight="36.0" prefWidth="198.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0598ff;">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
       <Button fx:id="btnCalculate" layoutX="351.0" layoutY="646.0" mnemonicParsing="false" onAction="#onClickOnCalculateTotalSalary" text="Calculate Total Salary">
          <font>
             <Font name="System Bold" size="16.0" />

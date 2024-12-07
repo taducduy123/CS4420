@@ -37,6 +37,7 @@ public class ForgotPasswordController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cbRole.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 18;");
         cbRole.getItems().addAll("Student", "Instructor", "Manager");
         cbRole.setValue("Student");
     }
@@ -67,8 +68,8 @@ public class ForgotPasswordController implements Initializable {
         // Send new password to user's email
         String newPassword = UUID.randomUUID().toString().substring(0,5).toLowerCase();
         String message = "The following is your account after resetting password:" +
-                         "\n username: " + username +
-                         "\n password: " + newPassword;
+                         "\n | username: " + username + " | " +
+                         "\n | password: " + newPassword + " | ";
         Map<String, String> map = new HashMap<>();
         map.put(email, message);
         mailService.sendMail(map, "Training Center Management System");
